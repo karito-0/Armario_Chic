@@ -1,15 +1,28 @@
+:root {
+  --color-fondo: #faf7f2;
+  --color-texto: #333;
+  --color-borde: #444;
+  --color-primario: #0056b3;
+
+  /* Colores por sección */
+  --color-zapatos: #d0f0f7;
+  --color-ropa: #f2e5ff;
+  --color-accesorios: #e9f7d0;
+}
+
 body {
-  background-color: #faf7f2;
+  background-color: var(--color-fondo);
   font-family: 'Poppins', Arial, sans-serif;
-  color: #333;
+  color: var(--color-texto);
   margin: 0;
   padding: 0;
 }
 
+
 .closet {
   max-width: 450px;
   background-color: #fffaf3;
-  border: 3px solid #444;
+  border: 3px solid var(--color-borde);
   border-radius: 12px;
   padding: 25px;
   margin: 50px auto;
@@ -25,7 +38,6 @@ body {
 
 
 .closet__section {
-  background-color: #f7f3ea;
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 20px;
@@ -37,25 +49,17 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+
+.closet__section--shoes { background-color: var(--color-zapatos); }
+.closet__section--clothes { background-color: var(--color-ropa); }
+.closet__section--accessories { background-color: var(--color-accesorios); }
+
 .closet__section-title {
   font-size: 1.2em;
   margin-bottom: 10px;
   border-bottom: 2px solid #ccc;
   padding-bottom: 5px;
   text-align: center;
-}
-
-
-.closet__section--shoes {
-  background-color: #d0f0f7;
-}
-
-.closet__section--clothes {
-  background-color: #f2e5ff;
-}
-
-.closet__section--accessories {
-  background-color: #e9f7d0;
 }
 
 
@@ -70,13 +74,26 @@ body {
   border-radius: 8px;
   padding: 10px 12px;
   font-weight: 600;
-  color: #0056b3;
+  color: var(--color-primario);
   text-decoration: underline;
   border: 1px solid #cfcfcf;
+  cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .closet__item:hover {
-  background-color: #0056b3;
+  background-color: var(--color-primario);
   color: #fff;
+}
+
+
+@media (max-width: 480px) {
+  .closet {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .closet__title {
+    font-size: 1.5em;
+  }
 }
